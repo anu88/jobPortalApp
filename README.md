@@ -164,7 +164,7 @@ Scope of improvements:
 JDK 8 and maven should be installed on your machine. For installing JDK 8 and maven please follow the hyperlinks. For building the application please follow the instructions as below:
 ```
 ```
-- Unzip the application and Navigate to folder ‘...\JobPortalApp’ in command prompt.
+- Download or clone the repository and Navigate to folder ‘...\JobPortalApp’ in command prompt.
 - Run ‘mvn clean install’ for building the application
 - After successful installation, it will create a target folder.
 ```
@@ -174,12 +174,12 @@ Please follow the instructions in next section to run the application.
 ## 3. How to run the application
 
 ```
-- Unzip the application. Navigate to the folder ‘...\ JobPortalApp\target\’ in command prompt.
+- Navigate to the folder ‘...\ JobPortalApp\target\’ in command prompt.
 - Run the command "java -jar JobPortalApp-0.0.1-SNAPSHOT.jar" which will start the application.
 - Open the URL: http://localhost:8080/swagger-ui.html#/
 - Navigate to the ‘createJobOffer’ API in ‘job-offer-controller’. Paste the request object as mentioned in ‘Create Job Offer’ and click on 'Try it out! '
 - Above request will create a new job offer. Similarly, please try out the other API’s.
-- For accessing the DB while application is running please open the URL and check the JDBC URL as ‘jdbc:h2:mem:test’ and click on ‘Connect’.
+- For accessing the DB while application is running please open the URL and check the JDBC URL as ‘jdbc:h2:mem:test’ and username as  'sa' and click on ‘Connect’. Password is not required to access the DB.
 ```
 ```
 Please note as this application runs on ‘in memory’ database, application restart will recreate the complete database and any persisted state of Job offer and job applications will cease to exist.
@@ -192,8 +192,9 @@ Though I’ve mentioned the improvement scope with individual API’s but below 
 - DB test and Integration tests should be added.
 - Exception handling can be improved further by creating more custom exception classes.
 - Project can be made modularized.
-- Configuration file - _application.yml_ can be made environment specific.
+- Configuration file - _application.yml_ can be made environment specific using externalized config server.
 - External messaging queue can be used for asynchronous events if consumer is a separate microservice.
+- New API's can be exposed for candidates to access the job application status.
 
 ## 5. Estimates
 
